@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const StyledContainer = styled.div`
-    background: #333852;
+    background: ${props => props.theme.primaryBg};
     min-height:1000vh;
     display:flex;
     justify-content:center;
@@ -13,7 +13,7 @@ const StyledContainer = styled.div`
         top:18vh;
         left:10vw;
         font-size:9vw;
-        color:rgba(255,255,255,0.03);
+        color:rgba(255,255,255,0.03)
     }
 `;
 
