@@ -1,9 +1,17 @@
-import {createStore } from 'redux'
+import {createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
 import rootReducer from '../reducers'
+import api from '../middleware/api'
 
-const configStore = () => {
-    const store = createStore(rootReducer)
+const configureStore = (initialState) => {
+    const store = createStore(rootReducer, initialState, applyMiddleware(logger, api))
+    if(module.hot){
+        //enable webpack hot module replacement for reducer
+        module.hot.accept('../reducers', () => {
+            store.replaceReducer(rootReducer)
+        })
+    }
     return store
 };
 
-export default configStore
+export default configureStore
