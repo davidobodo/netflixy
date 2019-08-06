@@ -1,6 +1,6 @@
-import {createStore, applyMiddleware } from 'redux'
+import {createStore, applyMiddleware, compose } from 'redux'
 import logger from 'redux-logger'
-import rootReducer from '../reducers'
+import rootReducer from '../reducers/rootReducer'
 import api from '../middleware/api'
 import DevTools from '../containers/DevTools'
 
@@ -16,7 +16,7 @@ const configureStore = (initialState) => {
 
     if(module.hot){
         //enable webpack hot module replacement for reducer
-        module.hot.accept('../reducers', () => {
+        module.hot.accept('../', () => {
             store.replaceReducer(rootReducer)
         })
     }
