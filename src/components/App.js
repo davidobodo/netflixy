@@ -5,6 +5,7 @@ import Movies from './Movies'
 import MovieDetails from './MovieDetails'
 
 const App =() => {
+    
     return(
         <StyledMovieContainer>
             <Route exact path="/" component={Movies}/>
