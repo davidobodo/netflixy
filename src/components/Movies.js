@@ -5,6 +5,8 @@ import StyledHeaderTitle from './StyledHeaderTitle'
 import { movies } from '../staticData'
 import StyledHorizontalScroll from './StyledHorizontalScroll';
 import Movie from './Movie'
+import StyledFooter from './StyledFooter'
+import StyledLargeBtn from './StyledLargeBtn'
 
 const Movies = () => (
     <Fragment>
@@ -19,9 +21,13 @@ const Movies = () => (
                     key={movie.id}
                     poster={movie.poster}
                     duration={movie.duration}
-                    year={movie.year}/>
+                    year={movie.year}
+                    name={movie.name}/>
             ))}
         </StyledHorizontalScroll>
+        <StyledFooter>
+            <StyledLargeBtn>Get Recommended Movies</StyledLargeBtn>
+        </StyledFooter>
     </Fragment>
 )
 
