@@ -5,6 +5,7 @@ import DevTools from './DevTools'
 import StyledContainer from '../components/StyledContainer'
 import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
+import App from '../components/App'
 
 const Root = () => {
     return(
@@ -15,6 +16,7 @@ const Root = () => {
             <ThemeProvider theme={theme}>
                 {/* just to style my container(just as the name implies)*/}
                 <StyledContainer>
+                    <App/>
                     <DevTools/>
                 </StyledContainer>
             </ThemeProvider>
