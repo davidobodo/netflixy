@@ -1,6 +1,6 @@
 import React from 'react'
 
-cont MovieDetails =()=> {
+const MovieDetails =()=> {
     return <div>MovieDetails</div>
 }
 
