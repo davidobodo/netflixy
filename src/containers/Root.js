@@ -1,14 +1,15 @@
 import React from 'react'
-import {Provider} from 'react-redux'
+import { Provider } from 'react-redux'
 import store from '../store/store'
 import DevTools from './DevTools'
 import StyledContainer from '../components/StyledContainer'
 import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
 import App from '../components/App'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const Root = () => {
-    return(
+    return (
 
         //to connect to store
         <Provider store={store}>
@@ -16,8 +17,10 @@ const Root = () => {
             <ThemeProvider theme={theme}>
                 {/* just to style my container(just as the name implies)*/}
                 <StyledContainer>
-                    <App/>
-                    <DevTools/>
+                    <Router>
+                        <App />
+                    </Router>
+                    <DevTools />
                 </StyledContainer>
             </ThemeProvider>
         </Provider>
