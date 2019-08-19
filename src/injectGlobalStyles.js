@@ -1,6 +1,6 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
-export default () => injectGlobal`
+export default () => createGlobalStyle`
     *:before,
     *:after,
     *{

@@ -8,8 +8,12 @@ import theme from '../constants/theme'
 
 const Root = () => {
     return(
+
+        //to connect to store
         <Provider store={store}>
+            {/* to bring in my theme(themes are like variables(reuseable styles)) */}
             <ThemeProvider theme={theme}>
+                {/* just to style my container(just as the name implies)*/}
                 <StyledContainer>
                     <DevTools/>
                 </StyledContainer>
