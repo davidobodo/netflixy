@@ -8,6 +8,7 @@ import StyledFooter from './StyledFooter'
 import StyledLargeBtn from './StyledLargeBtn'
 import HelpMenuContainer from '../containers/HelpMenuContainer'
 import StyledLoader from './StyledLoader'
+import StyledMovieLink from './StyledMovieLink'
 
 
 class Movies extends Component {
@@ -25,15 +26,17 @@ class Movies extends Component {
                 </StyledHeader>
                 <StyledHorizontalScroll>
                     {this.props.loading
-                        ? <StyledLoader/>
-                        :this.props.movies.map(movie => (
-                        <Movie
-                            key={movie.id}
-                            poster={movie.poster}
-                            duration={movie.duration}
-                            year={movie.year}
-                            name={movie.name} />
-                    ))}
+                        ? <StyledLoader />
+                        : this.props.movies.map(movie => (
+                            <StyledMovieLink href={`/movies/${movie.id}`} key={movie.id}>
+                                <Movie
+                                    key={movie.id}
+                                    poster={movie.poster}
+                                    duration={movie.duration}
+                                    year={movie.year}
+                                    name={movie.name} />
+                            </StyledMovieLink>
+                        ))}
                 </StyledHorizontalScroll>
                 <StyledFooter>
                     <StyledLargeBtn>Get Recommended Movies</StyledLargeBtn>
