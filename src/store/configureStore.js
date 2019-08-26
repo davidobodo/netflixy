@@ -3,6 +3,7 @@ import logger from 'redux-logger'
 import rootReducer from '../reducers/rootReducer'
 import api from '../middleware/api'
 import DevTools from '../containers/DevTools'
+import { persistStore } from 'redux-persist'
 
 const configureStore = (initialState) => {
     const store = createStore(
@@ -20,7 +21,9 @@ const configureStore = (initialState) => {
             store.replaceReducer(rootReducer)
         })
     }
-    return store
+    const persiststore = persistStore(store)
+
+    return { store, persiststore}
 };
 
 export default configureStore

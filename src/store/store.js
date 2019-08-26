@@ -1,5 +1,7 @@
 import configureStore from './configureStore'
 
-const store = configureStore();
+const {store, persiststore } = configureStore();
 
-export default store
+export { persiststore, store as default}
+
+//store is the default export while persistStore is a named export

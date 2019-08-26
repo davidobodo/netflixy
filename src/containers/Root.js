@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import store from '../store/store'
+import { PersistGate } from 'redux-persist/integration/react'
+import store, { persiststore } from '../store/store'
 import DevTools from './DevTools'
 import StyledContainer from '../components/StyledContainer'
 import { ThemeProvider } from 'styled-components'
@@ -14,17 +15,19 @@ const Root = () => {
 
         //to connect to store
         <Provider store={store}>
-            {/* to bring in my theme(themes are like variables(reuseable styles)) */}
-            <ThemeProvider theme={theme}>
-                {/* just to style my container(just as the name implies)*/}
-                <StyledContainer>
-                    <Router>
-                        <App />
-                    </Router>
-                    <DevTools />
-                    <ToastContainer/>
-                </StyledContainer>
-            </ThemeProvider>
+            <PersistGate persistor={persiststore} loading={null}>
+                {/* to bring in my theme(themes are like variables(reuseable styles)) */}
+                <ThemeProvider theme={theme}>
+                    {/* just to style my container(just as the name implies)*/}
+                    <StyledContainer>
+                        <Router>
+                            <App />
+                        </Router>
+                        <DevTools />
+                        <ToastContainer />
+                    </StyledContainer>
+                </ThemeProvider>
+            </PersistGate>
         </Provider>
     )
 }
