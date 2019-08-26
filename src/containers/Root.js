@@ -7,6 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import theme from '../constants/theme'
 import App from '../components/App'
 import { BrowserRouter as Router } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 
 const Root = () => {
     return (
@@ -21,6 +22,7 @@ const Root = () => {
                         <App />
                     </Router>
                     <DevTools />
+                    <ToastContainer/>
                 </StyledContainer>
             </ThemeProvider>
         </Provider>

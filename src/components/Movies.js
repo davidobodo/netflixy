@@ -6,9 +6,12 @@ import StyledHorizontalScroll from './StyledHorizontalScroll';
 import Movie from './Movie'
 import StyledFooter from './StyledFooter'
 import StyledLargeBtn from './StyledLargeBtn'
+import HelpMenuContainer from '../containers/HelpMenuContainer'
+import StyledLoader from './StyledLoader'
+
 
 class Movies extends Component {
-    componentDidMount(){
+    componentDidMount() {
         this.props.getMovies()
     }
 
@@ -16,12 +19,14 @@ class Movies extends Component {
         return (
             <Fragment>
                 <StyledHeader>
-                    <FontAwesomeIcon icon="bars" text="help" />
-                        <StyledHeaderTitle>The Movie Recommender</StyledHeaderTitle>
+                    <HelpMenuContainer />
+                    <StyledHeaderTitle>The Movie Recommender</StyledHeaderTitle>
                     <FontAwesomeIcon icon="search" />
                 </StyledHeader>
                 <StyledHorizontalScroll>
-                    {this.props.movies.map(movie => (
+                    {this.props.loading
+                        ? <StyledLoader/>
+                        :this.props.movies.map(movie => (
                         <Movie
                             key={movie.id}
                             poster={movie.poster}
