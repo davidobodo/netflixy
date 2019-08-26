@@ -9,7 +9,7 @@ const reactToastifyDefaultOptions ={
     position: toast.POSITION.TOP_LEFT
 };
 
-const toastMidleware = () => next => action=>{
+const toastMiddleware = () => next => action=>{
     next(action);
     if(action.type !== SHOW_TOAST) return;
 

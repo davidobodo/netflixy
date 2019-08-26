@@ -4,13 +4,14 @@ import rootReducer from '../reducers/rootReducer'
 import api from '../middleware/api'
 import DevTools from '../containers/DevTools'
 import { persistStore } from 'redux-persist'
+import toastMiddleWare from '../middleware/toasts'
 
 const configureStore = (initialState) => {
     const store = createStore(
         rootReducer,
         initialState,
         compose(
-            applyMiddleware(logger, api),
+            applyMiddleware(api, toastMiddleWare, logger),
             DevTools.instrument()//Instrument function invoked as a store enhancer
             ) 
         );

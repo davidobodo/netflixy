@@ -3,6 +3,7 @@ import {devices} from '../util/styledUtils'
 
 const StyledMovieContainer = styled.section`
     background:${props => props.theme.secondaryBg};
+    position:relative;
     width: 100%;
     height:100vh;
     display:flex;

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import PropTypes from 'prop-types'
 import FontAwesomeIcon from './FontAwesomeIcons'
 import StyledHeader from './StyledHeader'
 import StyledHeaderTitle from './StyledHeaderTitle'
@@ -12,6 +13,14 @@ import StyledMovieLink from './StyledMovieLink'
 
 
 class Movies extends Component {
+    state = {};
+    static defaultProps = {
+        movies: [],
+        loading: true
+    };
+    static propTypes = {
+        movies: PropTypes.arrayOf(PropTypes.object)
+    };
     componentDidMount() {
         this.props.getMovies()
     }
