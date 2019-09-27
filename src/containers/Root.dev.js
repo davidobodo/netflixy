@@ -20,11 +20,11 @@ const Root = () => {
                 <ThemeProvider theme={theme}>
                     {/* just to style my container(just as the name implies)*/}
                     <StyledContainer>
+                        <ToastContainer />
                         <Router>
                             <App />
                         </Router>
-                        <DevTools />
-                        <ToastContainer />
+                        {/* <DevTools /> */}
                     </StyledContainer>
                 </ThemeProvider>
             </PersistGate>

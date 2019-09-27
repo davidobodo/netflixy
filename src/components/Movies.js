@@ -1,13 +1,11 @@
 import React, { Component, Fragment } from 'react'
 import PropTypes from 'prop-types'
-import FontAwesomeIcon from './FontAwesomeIcons'
 import StyledHeader from './StyledHeader'
-import StyledHeaderTitle from './StyledHeaderTitle'
 import StyledHorizontalScroll from './StyledHorizontalScroll';
 import Movie from './Movie'
+import Header from './Header'
 import StyledFooter from './StyledFooter'
 import StyledLargeBtn from './StyledLargeBtn'
-import HelpMenuContainer from '../containers/HelpMenuContainer'
 import StyledLoader from './StyledLoader'
 import StyledMovieLink from './StyledMovieLink'
 
@@ -28,11 +26,7 @@ class Movies extends Component {
     render() {
         return (
             <Fragment>
-                <StyledHeader>
-                    <HelpMenuContainer />
-                    <StyledHeaderTitle>The Movie Recommender</StyledHeaderTitle>
-                    <FontAwesomeIcon icon="search" />
-                </StyledHeader>
+                <Header/>
                 <StyledHorizontalScroll>
                     {this.props.loading
                         ? <StyledLoader />

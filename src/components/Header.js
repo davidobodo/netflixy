@@ -1,11 +1,12 @@
 import React from "react";
-import FontAwesomeIcon from "./FontAwesomeIcon";
+import FontAwesomeIcon from "./FontAwesomeIcons";
 import StyledHeader from "./StyledHeader";
 import StyledHeaderTitle from "./StyledHeaderTitle";
+import HelpMenuContainer from '../containers/HelpMenuContainer'
 
 const Header = () => (
   <StyledHeader>
-    <FontAwesomeIcon icon="bars" text="help" />
+    <HelpMenuContainer/>
     <StyledHeaderTitle>The Movie Recommender</StyledHeaderTitle>
     <FontAwesomeIcon icon="search" />
   </StyledHeader>

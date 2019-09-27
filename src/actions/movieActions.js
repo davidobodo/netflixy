@@ -8,7 +8,10 @@ import { GET_MOVIES} from '../constants/labels'
 const getMoviesAC =createAction(API, apiPayloadCreator);
 
 export const getMovies =()=>
-    getMoviesAC({url:"/vcvx0", onSuccess: setMovies, label: GET_MOVIES});
+    getMoviesAC({
+        url:"/vcvx0", 
+        onSuccess: setMovies,
+        label: GET_MOVIES});
 
 function setMovies(movies){
     const movieSchema = new schema.Entity("movies");

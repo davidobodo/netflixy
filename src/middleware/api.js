@@ -13,7 +13,7 @@ const api = ({ dispatch}) => next => action => {
     next(action);
     if(action.type !==API)return;
 
-    const {url, method, data, onSuccess, onFailure, label} =action.payload;
+    const {url, method, data, onSuccess, onFailure, label} = action.payload;
 
     const dataOrParams = ["GET","DELETE"].includes(method) ? "params" :"data";
 

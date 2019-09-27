@@ -5,12 +5,12 @@ const StyledLargeBtn = styled.button`
     border:0;
     border-radius:5px;
     color:#fff;
-    width:100%;
+    width:60%;
     height:50px;
     display:block;
     margin:0 auto;
     background:#eb6259;
-    transition:all 0.1s cubic-beizer(0.67, 0.13, 0.1, 0.81)
+    transition:all 1s cubic-beizer(0.67, 0.13, 0.1, 0.81)
 
     &:hover{
         cursor:pointer;
@@ -23,7 +23,7 @@ const StyledLargeBtn = styled.button`
     }
 
     &:active{
-        transform:translatey(4px);
+        transform:translateY(4px);
     }
 
     &:after{
