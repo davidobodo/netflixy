@@ -75,18 +75,14 @@ class MovieDetails extends Component {
     const { poster, name, duration, details, year } = this.props.selectedMovie;
     return (
       <Fragment>
-        {/* header */}
         <StyledHeader>
           <StyledHeaderLink href="/">
             <FontAwesomeIcon icon="chevron-left" text="Go back" />
           </StyledHeaderLink>
         </StyledHeader>
-        {/* actual movie details */}
         <StyledMovieDetails>
-          {/* Note the "isExpanded" prop passed to StyledPoster   */}
           <StyledPoster src={poster} alt={`Movie: ${name}`} isExpanded />
           <StyledMovieInfo>
-            {/* Note the "isLarge" prop passed to StyledMovieTitle   */}
             <StyledMovieTitle isLarge> {name} </StyledMovieTitle>
             <StyledMovieLengthYear
             >{`${duration} ${year}`}</StyledMovieLengthYear>
